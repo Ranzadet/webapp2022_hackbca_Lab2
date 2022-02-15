@@ -1,0 +1,2 @@
+SELECT project_language, project_language_id
+FROM project_language

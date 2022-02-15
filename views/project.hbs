@@ -1,0 +1,63 @@
+         <div class="container">
+ 
+                   <div class="card">
+                     <!-- image is optional -->
+                     <div class="card-image">
+                         <!-- Added div wrapper to create dark gradient -->
+                         <div class="card-image-gradient"> 
+                             <img src="/images/Blackjack_board.jfif">
+                         </div>
+                         <span class="card-title"><h1>{{project_data.project_name}}</h1></span>
+                       <!-- USER ONLY - Initialize page with appropriate state of button -->
+                       <a onclick='toggleInterest(this, "{{ project_id }}")' class="btn-floating btn-large halfway-fab waves-effect waves-light scale-transition scale-in blue"><i class="material-icons">star_border</i></a>
+                       <!-- <a onclick='toggleInterest(this, "{{ event_id }}"))'class="btn-floating btn-large halfway-fab waves-effect waves-light scale-transition scale-in yellow"><iclass="material-icons">star</i></a> -->
+                         
+                     </div>
+                     <div class="card-content">
+ 
+                         <table class="centered responsive-table">
+                             <thead>
+                                 <tr>
+                                 <th>Owner</th>
+                                 <th>Type</th>
+                                 <th>Date Proposed</th>
+                                 <th>Language</th>
+                                 <th>Members</th>
+                                 <!-- ADMIN ONLY BUTTONS -->
+                                 <th>Admin Op</th>
+                                 
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <tr>
+                                 {{#with project_data}}
+                                 <td>{{project_owner}}</td>
+                                 <td>{{project_type}}</td>
+                                 <td>{{project_date}}</td>
+                                 <td>{{project_language}}</td>
+                                 <td>{{project_members}}<i class=material-icons>people</i></td>
+                                 <!-- ADMIN ONLY BUTTONS -->
+ 
+                                 <td nowrap>
+                                   
+                                     <!-- Alternatively to going to a new page, trigger a modal ??-->
+                                     <a class="btn-floating waves-effect waves-light green lighten-1" href="/projects/{{project_id}}/modify"><i class="material-icons">edit</i></a>
+                                     <a class="btn-floating waves-effect waves-light red" onclick='confirmDelete("{{project_name}}","{{ project_id}}", "/projects")'><i class="material-icons">delete</i></a>
+         
+                                 </td>
+ 
+                             </tbody>
+                         </table>
+                         <div class="container event-description">{{project_description}}</div>
+                         
+                         {{/with}}
+                         <!-- TODO: Add a scrollable table (or series of cards??) listing the attendees who are interested -->
+                         <!-- https://vembarrajan.medium.com/html-css-tricks-scroll-able-table-body-tbody-d23182ae0fbc -->
+                     </div>
+                   </div>
+             
+     
+         </div>
+
+    <script src="/js/event_utils.js"></script>
+       <script src="/js/materialize.min.js"></script>
