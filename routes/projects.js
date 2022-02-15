@@ -113,7 +113,7 @@ router.post('/', async function(req, res, next) {
     next(err);
   }
 })
-
+ 
 let updateProjectQuery = fs.readFileSync(path.join(__dirname, "../db/update_Project.sql"), "utf-8"); 
 router.post('/:project_id', async function(req, res, next) {
   try {
