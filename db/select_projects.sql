@@ -8,7 +8,7 @@ SELECT
     project_type,
     project_language
 FROM
-    project, project_language, project_type, event_location
+    project, project_language, project_type
 WHERE
     project_language.project_language_id = project.project_language_id
     and project.project_type_id = project_type.project_type_id
