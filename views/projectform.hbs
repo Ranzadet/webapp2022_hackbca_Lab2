@@ -23,7 +23,7 @@
              <!-- https://materializecss.com/select.html -->
              <div class="row">
                <div class="input-field col s6">
-                 <select id="project_type" name="project_type" required>
+                 <select id="project_type" name="project_type_id" required>
                    <option value="" disabled selected>Select a type</option>
                    {{#each project_types}}
                       <option value="{{project_type_id}}">{{project_type}}</option>
@@ -33,7 +33,7 @@
                </div>
  
                <div class="input-field col s6">
-                 <select id="project_language" name="project_language" required>
+                 <select id="project_language" name="project_language_id" required>
                    <option value="" disabled selected>Select a language</option>
                    {{#each project_languages}}
                       <option value="{{project_language_id}}">{{project_language}}</option>
@@ -105,7 +105,7 @@
          //Set fields to curent values, if existing event data provided (modify)
     {{#with project}} 
     document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById("project_name").value = "{{project_name}}";
+        document.getElementById("project_name").value = "{{{project_name}}}";
         document.getElementById("project_type").value = "{{project_type_id}}";
         document.getElementById("project_language").value = "{{project_language_id}}";
         document.getElementById("project_date").value = "{{project_date}}";

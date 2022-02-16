@@ -4,7 +4,7 @@ SELECT
     project_owner,
     project_members,
     project_description,
-    DATE_FORMAT(project_date, '%Y-%m-%d') as project_date,
+    DATE_FORMAT(project_date, '%m-%d-%Y') as project_date,
     project_type,
     project_language
 FROM

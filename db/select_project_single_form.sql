@@ -6,7 +6,7 @@ SELECT
     project_type_id,
     project_language_id,
     project_description,
-    DATE_FORMAT(project_date, '%Y-%m-%d') as project_date
+    DATE_FORMAT(project_date, '%m-%d-%Y') as project_date
 FROM 
 	project 
 WHERE

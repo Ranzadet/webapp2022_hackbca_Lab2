@@ -116,6 +116,7 @@ router.post('/', async function(req, res, next) {
  
 let updateProjectQuery = fs.readFileSync(path.join(__dirname, "../db/update_Project.sql"), "utf-8"); 
 router.post('/:project_id', async function(req, res, next) {
+  
   try {
     let results = await db.queryPromise(updateProjectQuery, [req.body.project_name, 
       req.body.project_owner, 
@@ -126,6 +127,7 @@ router.post('/:project_id', async function(req, res, next) {
       req.body.project_date,
       req.params.project_id
     ]);
+    console.log(req.body);
   res.redirect(`/projects/${req.params.project_id}`);
   } catch(err) {
     next(err);
