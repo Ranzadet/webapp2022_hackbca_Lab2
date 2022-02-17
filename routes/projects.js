@@ -101,8 +101,8 @@ router.post('/', async function(req, res, next) {
     let results = await db.queryPromise(insertProjectQuery, [req.body.project_name, 
       req.body.project_owner, 
       req.body.project_members, 
-      req.body.project_type,
-      req.body.project_language,
+      req.body.project_type_id,
+      req.body.project_language_id,
       req.body.project_description,
       req.body.project_date
     ]);
